@@ -7,4 +7,13 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  resources :air_pollutions do
+    collection do 
+      get :average_air_quality_index_per_month_per_location
+      get :average_air_quality_by_location
+      get :average_air_quality_per_state
+    end
+  end
+
 end

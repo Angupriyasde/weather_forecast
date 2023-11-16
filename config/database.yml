@@ -7,5 +7,12 @@ default: &default
 development:
   <<: *default
   database: weather_forecast
-  username: test
+  username: postgres
+  password: password
+
+
+test:
+  <<: *default
+  database: weather_forecast_test
+  username: postgres
   password: password
