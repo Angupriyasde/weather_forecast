@@ -1,9 +1,9 @@
 class LocationImporter
    
     def self.import
-        locations = ["chennai", "delhi", "hyderabad", "goa", "kerala", "kochin", "Kashmir","madurai", "trichy","Kanyakumari","Andra","Mumbai"]
+        locations = ["chennai", "delhi", "hyderabad", "goa", "kerala", "kochin", "Kashmir","madurai", "trichy","Kanyakumari","Andra","Mumbai","pondichery"]
         locations.each do |location|
-            location_details = GeocodingService.geocode_location(location)
+            location_details = LocationService.get_details(location)
 
             next unless location_details
             create_locations(location_details)

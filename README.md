@@ -5,20 +5,57 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Clone the project
 
-* System dependencies
+    `git clone https://github.com/Angupriyasde/weather_forecast.git`
 
-* Configuration
+* Install rails
 
-* Database creation
+    `gem install rails`
 
-* Database initialization
+* Install gems
 
-* How to run the test suite
+    `bundle install`
 
-* Services (job queues, cache servers, search engines, etc.)
+* Create & Migrate DB
 
-* Deployment instructions
+    `rails db:create`
 
-* ...
+    `rails db:migrate`
+
+* Start server
+
+    `rails server`
+
+* Importing data (Manually trigggering)
+
+    `LocationImporter.import`
+
+    `AirPollutionImporter.import` (To import current data)
+
+    `AirPollutionImporter.import_history` (To import history)
+
+* Import data using scheduler
+
+    `whenever --update-crontab`
+
+    `crontab -l` (To check if crontab is updated)
+
+* Run test cases
+
+    `bundle exec rspec`
+
+* API to hit to get Average Air Quality index
+
+    - Average air quality index per month per location
+
+        `http://localhost:3000/air_pollutions/average_air_quality_index_per_month_per_location.json`
+
+    - Average air quality index based on location
+
+        `http://localhost:3000/air_pollutions/average_air_quality_by_location.json`
+
+    - Average air quality index based on state
+
+        `http://localhost:3000/air_pollutions/average_air_quality_per_state.json`
+
